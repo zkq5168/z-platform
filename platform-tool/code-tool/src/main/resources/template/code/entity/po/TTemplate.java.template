@@ -1,0 +1,26 @@
+package com.zkq.platform.{{module}}.entity.po;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * {{comment}}
+ * @author {{author}}
+ */
+@Data
+@TableName("{{tablename}}")
+public class T{{className}} implements Serializable {
+    private static final long serialVersionUID = 1L;
+    {{{
+    /**
+     * {{column_comment}}
+     */
+     {{annotation}}
+     private {{type}} {{property}};
+    }}}
+}

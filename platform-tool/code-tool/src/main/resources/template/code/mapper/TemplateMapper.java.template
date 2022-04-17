@@ -1,0 +1,10 @@
+package com.zkq.platform.{{module}}.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zkq.platform.{{module}}.entity.po.T{{className}};
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface {{className}}Mapper extends BaseMapper<T{{className}}> {
+
+}

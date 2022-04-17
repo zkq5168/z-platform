@@ -1,0 +1,12 @@
+package com.zkq.platform.{{module}}.service;
+
+import com.zkq.platform.{{module}}.entity.dto.{{className}}DTO;
+import com.zkq.platform.{{module}}.entity.po.T{{className}};
+import com.zkq.platform.webcommon.service.IBaseService;
+/**
+ * {{comment}}业务逻辑处理接口
+ * @author {{author}}
+ * @date {{date}}
+ */
+public interface I{{className}}Service extends IBaseService<T{{className}}, {{className}}DTO> {
+}

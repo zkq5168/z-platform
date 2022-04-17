@@ -1,0 +1,17 @@
+# 应用名称
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/platform?serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: root
+
+#下面这些内容是为了让MyBatis映射
+#指定Mybatis的Mapper文件
+mybatis:
+  mapper-locations: classpath:com/zkq/platform/**/mapper/*.xml
+  #指定Mybatis的实体目录
+  type-aliases-package: com.zkq.platform.system.entity.po
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

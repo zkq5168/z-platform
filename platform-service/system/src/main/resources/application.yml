@@ -1,0 +1,17 @@
+# 应用名称
+spring:
+  application:
+    name: system
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: develop
+        group: develop
+
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+

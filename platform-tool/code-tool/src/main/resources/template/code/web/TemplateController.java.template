@@ -1,0 +1,19 @@
+package com.zkq.platform.{{module}}.web;
+
+import com.zkq.platform.{{module}}.entity.dto.{{className}}DTO;
+import com.zkq.platform.{{module}}.entity.po.T{{className}};
+import com.zkq.platform.{{module}}.entity.vo.{{className}}VO;
+import com.zkq.platform.{{module}}.service.I{{className}}Service;
+import com.zkq.platform.webcommon.web.BaseController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * {{comment}}控制器
+ * @author zkq
+ * @date {{date}}
+ */
+@RestController
+@RequestMapping("/{{className.lower}}")
+public class {{className}}Controller extends BaseController<I{{className}}Service, T{{className}}, {{className}}DTO, {{className}}VO> {
+}

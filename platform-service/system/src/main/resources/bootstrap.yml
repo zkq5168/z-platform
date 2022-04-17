@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: develop
+        group: develop
+        shared-configs[0]:
+          data-id: system.yml
+          group: develop
+          refresh: true
+        shared-configs[1]:
+          data-id: aaa.yml
+          group: develop
+          refresh: true

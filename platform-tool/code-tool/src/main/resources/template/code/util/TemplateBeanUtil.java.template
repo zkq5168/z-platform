@@ -1,0 +1,26 @@
+package com.zkq.platform.{{module}}.util;
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zkq.platform.{{module}}.entity.dto.{{className}}DTO;
+import com.zkq.platform.{{module}}.entity.po.T{{className}};
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+import java.util.List;
+/**
+ * {{comment}}MapStruct生成工具类
+ * @author {{author}}
+ * @date {{date}}
+ */
+@Mapper(componentModel = "spring")
+public interface {{className}}BeanUtil {
+    {{className}}BeanUtil INSTANCE = Mappers.getMapper({{className}}BeanUtil.class);
+
+    T{{className}} dtoToPo({{className}}DTO source);
+
+    {{className}}DTO poToDto(T{{className}} source);
+
+    List<{{className}}DTO> listPoToDto(List<T{{className}}> source);
+
+    Page<{{className}}DTO> pagePoToDto(Page<T{{className}}> source);
+}

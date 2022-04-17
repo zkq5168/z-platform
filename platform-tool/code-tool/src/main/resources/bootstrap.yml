@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: develop
+        group: develop
+        shared-configs[0]:
+          data-id: code-generator.yml
+          group: develop
+          refresh: true

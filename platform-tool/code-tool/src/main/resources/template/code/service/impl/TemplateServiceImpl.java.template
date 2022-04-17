@@ -1,0 +1,45 @@
+package com.zkq.platform.{{module}}.service.impl;
+
+import cn.hutool.core.util.IdUtil;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zkq.platform.{{module}}.entity.dto.{{className}}DTO;
+import com.zkq.platform.{{module}}.entity.po.T{{className}};
+import com.zkq.platform.{{module}}.mapper.{{className}}Mapper;
+import com.zkq.platform.{{module}}.service.I{{className}}Service;
+import com.zkq.platform.{{module}}.util.{{className}}BeanUtil;
+import com.zkq.platform.webcommon.service.impl.BaseServiceImpl;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * {{comment}}业务逻辑处理实现类
+ * @author {{author}}
+ * @date {{date}}
+ */
+@Service
+public class {{className}}ServiceImpl extends BaseServiceImpl<{{className}}Mapper, T{{className}}, {{className}}DTO> implements I{{className}}Service {
+    @Override
+    public T{{className}} generateUUID(T{{className}} t{{className}}) {
+        t{{className}}.set{{className}}Id(IdUtil.simpleUUID());
+        return t{{className}};
+    }
+
+    @Override
+    public T{{className}} dtoToPo({{className}}DTO source) {
+        return {{className}}BeanUtil.INSTANCE.dtoToPo(source);
+    }
+
+    @Override
+    public {{className}}DTO poToDto(T{{className}} source) {
+        return {{className}}BeanUtil.INSTANCE.poToDto(source);
+    }
+    @Override
+    public List<{{className}}DTO> listPoToDto(List<T{{className}}> source) {
+        return {{className}}BeanUtil.INSTANCE.listPoToDto(source);
+    }
+    @Override
+    public Page<{{className}}DTO> pagePoToDto(Page<T{{className}}> source) {
+        return {{className}}BeanUtil.INSTANCE.pagePoToDto(source);
+    }
+}
