@@ -37,6 +37,8 @@ public class EntityTemplateHandler extends DefaultTemplateHandler {
                     columnParam.put("type", "String");
                 }else if ("datetime".equals(column.getDataType())){
                     columnParam.put("type", "Date");
+                }else if ("int".equals(column.getDataType())){
+                    columnParam.put("type", "Integer");
                 }
 
                 String subCodeContent = placeHolder;

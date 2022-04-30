@@ -1,5 +1,7 @@
 package com.zkq.platform.webcommon.entity;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 
 import java.util.List;
@@ -15,6 +17,7 @@ public class Result<T> {
     private String message;     //结果消息
     private T data;             //返回的结果
     private List<T> dataList;   //返回的结果集
+    private long total;         //总条目数
 
     /**
      * 处理成功
@@ -50,6 +53,20 @@ public class Result<T> {
         result.code = 0;
         result.message = "成功";
         result.dataList = dataList;
+        return result;
+    }
+
+    /**
+     * 返回分页数据
+     * @param dataList
+     * @return
+     */
+    public static Result success(Page dataList){
+        Result result = new Result();
+        result.code = 0;
+        result.message = "成功";
+        result.dataList = dataList.getRecords();
+        result.total = dataList.getTotal();
         return result;
     }
 

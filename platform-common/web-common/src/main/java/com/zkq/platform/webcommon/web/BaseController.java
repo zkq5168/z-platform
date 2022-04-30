@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -50,8 +51,8 @@ public class BaseController<S extends IBaseService<T, DTO>, T, DTO, VO> {
      * @param ids
      * @return
      */
-    @GetMapping("/deleteByIds")
-    public Result deleteByIds(@RequestParam("ids") List<String> ids){
+    @PostMapping("/deleteByIds")
+    public Result deleteByIds(@RequestBody List<String> ids){
         int ret = baseService.deleteByIds(ids);
         return Result.success(ret);
     }
@@ -96,7 +97,9 @@ public class BaseController<S extends IBaseService<T, DTO>, T, DTO, VO> {
     @PostMapping("/page")
     public Result page(@RequestBody PageQueryDTO pageQueryDTO){
         Page page = baseService.page(pageQueryDTO);
-        return Result.success(page);
+        Result result = Result.success(page);
+        result.setTotal(page.getTotal());
+        return result;
     }
 
     /**

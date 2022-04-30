@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkq.platform.system.mapper.OrgMapper">
+  <resultMap id="BaseResultMap" type="com.zkq.platform.system.entity.po.TOrg">
+    <id column="org_id" jdbcType="VARCHAR" property="orgId" />
+	<result column="org_name" jdbcType="VARCHAR" property="orgName" />
+	<result column="org_short_name" jdbcType="VARCHAR" property="orgShortName" />
+	<result column="org_type" jdbcType="VARCHAR" property="orgType" />
+	<result column="parent_org_id" jdbcType="VARCHAR" property="parentOrgId" />
+	<result column="display_order" jdbcType="INTEGER" property="displayOrder" />
+	<result column="enable" jdbcType="VARCHAR" property="enable" />
+	<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	<result column="creater" jdbcType="VARCHAR" property="creater" />
+	<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+	<result column="updater" jdbcType="VARCHAR" property="updater" />
+	<result column="delete_flag" jdbcType="VARCHAR" property="deleteFlag" />
+	<result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime" />	
+  </resultMap>
+  <sql id="Base_Column_List">
+    org_id,org_name,org_short_name,org_type,parent_org_id,display_order,enable,create_time,creater,update_time,updater,delete_flag,delete_time
+  </sql>
+</mapper>

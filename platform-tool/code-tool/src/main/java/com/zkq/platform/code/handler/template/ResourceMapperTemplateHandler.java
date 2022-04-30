@@ -48,7 +48,14 @@ public class ResourceMapperTemplateHandler extends DefaultTemplateHandler {
                     columnParam.put("type", "result");
                 }
                 columnParam.put("column_name", column.getColumnName());
-                columnParam.put("column_type", column.getDataType());
+                if ("varchar".equals(column.getDataType())){
+                    columnParam.put("column_type", "VARCHAR");
+                }else if ("datetime".equals(column.getDataType())){
+                    columnParam.put("column_type", "TIMESTAMP");
+                }else if ("int".equals(column.getDataType())){
+                    columnParam.put("column_type", "INTEGER");
+                }
+
                 columnParam.put("property", StrUtil.toCamelCase(column.getColumnName()));
 
                 Iterator<Map.Entry<String, String>> it = columnParam.entrySet().iterator();

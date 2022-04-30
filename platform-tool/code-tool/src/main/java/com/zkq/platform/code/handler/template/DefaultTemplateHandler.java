@@ -30,7 +30,7 @@ public class DefaultTemplateHandler {
         this.init(codeGeneratorDTO, table);
         this.params = new HashMap<>();
         this.params.put("tablename", codeGeneratorDTO.getTablename());
-        this.params.put("author", codeGeneratorDTO.getTablename());
+        this.params.put("author", codeGeneratorDTO.getAuthor());
         this.params.put("className", className);
         this.params.put("className.lower", className.toLowerCase());
         this.params.put("module", codeGeneratorDTO.getModule());
